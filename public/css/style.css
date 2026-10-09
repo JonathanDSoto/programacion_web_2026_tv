@@ -1,0 +1,26 @@
+p{
+	background-color: yellow;
+}
+
+.my_parag:hover{
+	background-color: red;
+	color:white;
+}
+
+ul{
+	background-color: green;
+
+}
+
+ul li:first-child{
+	background-color: cyan;
+
+}
+
+ol li:last-child{
+	background-color: #B8F5BA;
+}
+
+#title{
+
+}
