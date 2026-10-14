@@ -24,3 +24,17 @@ ol li:last-child{
 #title{
 
 }
+
+
+.container{
+
+	background-image: url('../img/wall_backbroudn.jpg');
+	background-repeat: repeat;
+	/*background-position: center;*/
+}
+
+
+
+
+
+
