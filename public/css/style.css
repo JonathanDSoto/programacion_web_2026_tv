@@ -1,5 +1,12 @@
 p{
 	background-color: yellow;
+	border: 5px dotted orange;
+	border-radius: 10px;
+	padding: 8px;
+}
+
+h2, h3, h4{
+	margin: 3px;
 }
 
 .my_parag:hover{
