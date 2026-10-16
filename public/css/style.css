@@ -5,6 +5,29 @@ p{
 	padding: 8px;
 }
 
+.container > div {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgb(207 232 220);
+  border: 2px solid rgb(79 185 227);
+}
+
+.one{
+
+	grid-column: 1 / 4;
+	grid-row: 1;
+}
+
+.container{
+
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);;
+	/*grid-template-rows: 100px;*/
+	grid-auto-rows: minmax(75px, auto);
+	gap: 10px;
+
+}
+
 h2, h3, h4{
 	margin: 3px;
 }
