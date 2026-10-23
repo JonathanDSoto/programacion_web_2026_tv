@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	
+	<div class="calculadora">
+		
+		<div class="head">
+			<label id="calculadora_data">
+				0
+			</label>
+		</div>
+		<div class="body">
+			
+			<button onclick="_clear()">
+				C
+			</button>
+			<button onclick="addNumber(1)">
+				1
+			</button>
+			<button onclick="addNumber(2)">
+				2
+			</button>
+			<button onclick="setOperation('+')">
+				+
+			</button>
+			<button onclick="setOperation('=')"> = </button>
+
+		</div>
+	</div>
+
+</body>
+<script>
+
+	var num1 = 0
+	var num2 = 0
+	var ope = ""
+
+	function _clear()
+	{
+		let data = document.getElementById("calculadora_data")
+
+		data.innerHTML = "0" 
+	}
+	
+	function addNumber(value)
+	{
+		console.log(value)
+
+		let data = document.getElementById("calculadora_data") 
+
+		console.log(data) 
+
+		if (parseInt(data.innerHTML) <= 0){
+
+			data.innerHTML = value
+		}else{
+			data.innerHTML += value
+		}
+	}
+
+	function setOperation(_ope)
+	{	
+		ope = _ope
+		let data = document.getElementById("calculadora_data")
+
+		if (parseInt(data.innerHTML) > 0 && num1==0){
+			num1 = parseInt(data.innerHTML)
+			data.innerHTML = "0"
+		}
+		if (parseInt(data.innerHTML) > 0 && num2==0){
+			num2 = parseInt(data.innerHTML)
+			data.innerHTML = "0"
+		}
+		if (_ope == '=') {
+			data.innerHTML = num1 + num2
+			num1 = 0
+			num2 = 0
+		}
+	}
+
+</script>
+</html>
+
+
+
+
+
+
+
