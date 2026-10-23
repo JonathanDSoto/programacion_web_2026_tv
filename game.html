@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<script>
+
+		let persons = [];
+
+		class Person
+		{ 
+			constructor(name,age)
+			{
+				this.name = name
+				this.age = age
+			} 
+
+			saludar(){
+				console.log("Hola soy "+this.name)
+			}
+		}
+		
+		var personaje = {
+
+			name: "Jonathan",
+			age: 34, 
+			saludar: function(){
+				console.log("Hola soy "+this.name)
+			}
+
+		}
+
+		let tadeo = new Person("tadeido",19);
+
+		tadeo.saludar();
+		console.log(tadeo.name)
+		console.log(tadeo.age)
+
+		personaje.saludar()
+
+		console.log(personaje.name)
+		console.log(personaje.age)
+
+		persons.push(tadeo);
+		persons.push(personaje);
+		persons.push("hola")
+
+		persons.pop()
+
+		persons.push(1)
+
+		console.log(persons)
+
+		persons.forEach(p => console.log(p))
+
+	</script>
+</body>
+</html>
