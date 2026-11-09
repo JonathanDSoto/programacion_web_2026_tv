@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+    
+    <button onclick="getCharacterData()">
+        Get Data
+    </button>
+
+    <div id="conteiner">
+
+
+
+    </div>
+    
+    <script>
+        function getCharacterData()
+        {
+            let target = Math.floor(Math.random() * 200) +1
+            console.log(target)
+
+            fetch('https://rickandmortyapi.com/api/character/'+target)
+              .then(respuesta => respuesta.json())
+              .then(datos => {
+
+                let code = '<div>  <h1>'+datos.name+'</h1> <h2>'+datos.status+'</h2> <img src="'+datos.image+'"> </div>';
+
+                document.getElementById('conteiner').innerHTML = code
+                
+                console.log(datos.name)
+                console.log(datos.image)
+                console.log(datos.status)
+                console.log(datos)
+              })
+              .catch(error => console.error('Error:', error));
+        }
+    </script>
+
+</body>
+</html>
