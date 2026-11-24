@@ -83,6 +83,28 @@ class UsersController
 		return false;
 	}
 
+	public function removeUser($id)
+	{
+		try {
+		    $database = new Database();
+
+		    $conn = $database->connect(); 
+		    
+		    $stmt = $conn->query("DELETE FROM users WHERE `users`.`id` = {$id}"); 
+
+		    $resultado = $stmt->fetch(); 
+
+		    $database->disconnect();
+
+		   	return true; 
+		    
+
+		} catch (RuntimeException $e) {
+		    echo "Error al conectar con la base de datos.";
+		} 
+
+		return false;
+	}
 }
 
 ?>

@@ -1,4 +1,3 @@
-
 <?php 
     require_once "UsersController.php"; 
 
@@ -83,6 +82,7 @@
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Correo electrónico</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
 
@@ -99,6 +99,11 @@
                             </td>
                             <td>
                                 <?= htmlspecialchars($usuario['email']) ?>
+                            </td>
+                            <td>
+                                <a href="delete_user.php?id=<?= $usuario['id']?>">
+                                    Eliminar
+                                </a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
