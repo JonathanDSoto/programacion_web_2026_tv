@@ -92,7 +92,7 @@ class UsersController
 		    
 		    $stmt = $conn->query("DELETE FROM users WHERE `users`.`id` = {$id}"); 
 
-		    $resultado = $stmt->fetch(); 
+		    $resultado = $stmt->rowCount(); 
 
 		    $database->disconnect();
 
