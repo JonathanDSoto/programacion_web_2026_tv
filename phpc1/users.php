@@ -73,6 +73,10 @@
 
         <h1>Lista de Usuarios</h1>
 
+        <a href="add_user.php">
+            Agregar usuario
+        </a>
+
         <table>
             <thead>
                 <tr>

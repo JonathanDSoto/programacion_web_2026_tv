@@ -8,7 +8,7 @@ class Database
     private int $port = 3306;
     private string $database = "pweb26";
     private string $username = "root";
-    private string $password = "";
+    private string $password = "root";
 
     private ?PDO $connection = null;
 
