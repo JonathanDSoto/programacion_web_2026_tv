@@ -104,6 +104,9 @@
                                 <a href="delete_user.php?id=<?= $usuario['id']?>">
                                     Eliminar
                                 </a>
+                                <a href="update_user.php?id=<?= $usuario['id']?>">
+                                    Editar
+                                </a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

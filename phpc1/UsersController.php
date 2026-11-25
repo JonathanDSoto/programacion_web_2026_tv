@@ -24,7 +24,22 @@ if (isset($_POST['action'])) {
 			}
 
 			break;
-		
+		case 'update_user':
+
+			$id = ($_POST["user_id"] ?? "");
+			$name = trim($_POST["name"] ?? "");
+	        $email = trim($_POST["email"] ?? "");
+	        $password = $_POST["password"] ?? ""; 
+
+			$uc = new UsersController();
+
+			if ($uc->updateUser($id,$name,$email,$password)) {
+				header('Location:users.php?ok');
+			}else{
+				header('Location:users.php?error');
+			}
+
+		break;	
 		default:
 			// code...
 			break;
@@ -34,8 +49,7 @@ if (isset($_POST['action'])) {
 class UsersController
 {
 
-
-	public function get()
+	public function updateUser($id,$name,$email,$password)
 	{
 
 		try {
@@ -43,7 +57,38 @@ class UsersController
 
 		    $conn = $database->connect(); 
 		    
-		    $stmt = $conn->query("Select * from users "); 
+		    $stmt = $conn->query("UPDATE `users` SET `name` = '{$name}',`email` = '{$email}',`password` = '{$password}'  WHERE `users`.`id` = {$id}"); 
+
+		    $resultado = $stmt->rowCount(); 
+
+		    $database->disconnect();
+
+		   	return true; 
+		    
+
+		} catch (RuntimeException $e) {
+		    echo "Error al conectar con la base de datos.";
+		} 
+
+		return false;
+	}
+
+	public function get($id=null)
+	{
+
+		try {
+		    $database = new Database();
+
+		    $conn = $database->connect(); 
+
+		    if ( is_null($id) ) {
+		    	$stmt = $conn->query("Select * from users "); 
+		    }
+		    else
+		    {
+		    	$stmt = $conn->query("Select * from users where id = {$id}"); 
+		    }
+		    
 
 		    $resultado = $stmt->fetchAll(); 
 
